@@ -20,11 +20,12 @@ namespace FirstTestApplication
         public SqlCommandBuilder cBuilder;
         public DataView myDataView;
 
+
         public Form1() 
         {
             InitializeComponent();
-            connString = @"Data Source=.\DATASKEPTIC; Initial Catalog=AdventureWorks2019; Integrated Security=True;";
-            query = "SELECT * FROM HumanResources.Employee";
+            connString = "Data Source=DataSkeptic;Initial Catalog=AdventureWorks2019;Integrated Security=True;";
+            query = "SELECT * FROM HumanResources.Department";
             dAdapter = new SqlDataAdapter(query, connString);
             dTable = new DataTable();
             cBuilder = new SqlCommandBuilder(dAdapter);
@@ -91,7 +92,8 @@ namespace FirstTestApplication
         private void change_data_source(object sender, EventArgs e)
         {
             string tbl_str = dataGridView2.CurrentRow.Cells[2].Value.ToString();
-            query = "SELECT * FROM [" + tbl_str + "]";
+            string skema_str = dataGridView2.CurrentRow.Cells[1].Value.ToString();
+            query = "SELECT * FROM [" + skema_str + "].[" + tbl_str + "]";
             dAdapter = new SqlDataAdapter(query, connString);
             dTable = new DataTable();
             cBuilder = new SqlCommandBuilder(dAdapter);
