@@ -24,7 +24,7 @@ namespace FirstTestApplication
         public Form1() 
         {
             InitializeComponent();
-            connString = "Data Source=DataSkeptic;Initial Catalog=AdventureWorks2019;Integrated Security=True;";
+            connString = "Data Source=DataSkeptic;Initial Catalog=AdventureWorks2017;Integrated Security=True;";
             query = "SELECT * FROM HumanResources.Department";
             dAdapter = new SqlDataAdapter(query, connString);
             dTable = new DataTable();
@@ -88,12 +88,10 @@ namespace FirstTestApplication
         {
             myDataView.RowFilter = "";
         }
-
         private void change_data_source(object sender, EventArgs e)
         {
-            string tbl_str = dataGridView2.CurrentRow.Cells[2].Value.ToString();
-            string skema_str = dataGridView2.CurrentRow.Cells[1].Value.ToString();
-            query = "SELECT * FROM [" + skema_str + "].[" + tbl_str + "]";
+            string tbl_str = "[" + dataGridView2.CurrentRow.Cells[1].Value.ToString() + "].[" + dataGridView2.CurrentRow.Cells[2].Value.ToString() + "]";
+            query = "SELECT * FROM " + tbl_str;
             dAdapter = new SqlDataAdapter(query, connString);
             dTable = new DataTable();
             cBuilder = new SqlCommandBuilder(dAdapter);
