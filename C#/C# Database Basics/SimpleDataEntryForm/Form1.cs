@@ -31,7 +31,7 @@ namespace SimpleDataEntryForm
             saveprompt = false;
             connString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Scource=C:\Users\hudgi\source\repos\hudginsm\DataSkeptic-Projects\C#\C# Database Basics\Northwind.accdb";
             NW_Orders = new DataSet();
-            query1 = "SELECT * FROM Orders";
+            query1 = "SELECT * FROM [Orders]";
             query2 = "SELECT * FROM [Order Details]";
             orders_dAdapter = new OleDbDataAdapter(query1, connString);
             order_details_dAdapter = new OleDbDataAdapter(query2, connString);
