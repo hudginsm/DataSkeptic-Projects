@@ -29,7 +29,7 @@ namespace SimpleDataEntryForm
         {
             InitializeComponent();
             saveprompt = false;
-            connString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Scource=C:\Users\hudgi\source\repos\hudginsm\DataSkeptic-Projects\C#\C# Database Basics\Northwind.accdb";
+            connString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\hudgi\source\repos\hudginsm\DataSkeptic-Projects\C#\C# Database Basics\Northwind.accdb; Persist Security Info=False;";
             NW_Orders = new DataSet();
             query1 = "SELECT * FROM [Orders]";
             query2 = "SELECT * FROM [Order Details]";
@@ -46,7 +46,7 @@ namespace SimpleDataEntryForm
             orders_dAdapter.Fill(NW_Orders, "Orders");
             order_details_dAdapter.Fill(NW_Orders, "Order Details");
             DataColumn parentcolumn = NW_Orders.Tables["Orders"].Columns["Order ID"];
-            DataColumn childcolumn = NW_Orders.Tables["Orders Details"].Columns["Order ID"];
+            DataColumn childcolumn = NW_Orders.Tables["Order Details"].Columns["Order ID"];
             DataRelation relation = new System.Data.DataRelation("OrderstoDetails", parentcolumn, childcolumn);
             NW_Orders.Relations.Add(relation);
 
@@ -122,7 +122,7 @@ namespace SimpleDataEntryForm
                 }
             }
             orders_bndSource.MoveNext();
-            this.textBox2.Text = "" + (orders_bndSource.Position + 1);
+            this.textBox2.Text = "" + (order_details_bndSource.Position + 1);
             this.textBox3.Text = order_details_bndSource.Count.ToString();
             saveprompt = false;
         }
