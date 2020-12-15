@@ -61,7 +61,6 @@
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Order ID";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -213,6 +212,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Save Changes";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.SaveChanges_Click);
             // 
             // button2
             // 
@@ -222,6 +222,7 @@
             this.button2.TabIndex = 20;
             this.button2.Text = "Next Parent >>";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.NextParent_Click);
             // 
             // button3
             // 
@@ -231,6 +232,7 @@
             this.button3.TabIndex = 21;
             this.button3.Text = "Next Child >>";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.NextChild_Click);
             // 
             // button4
             // 
@@ -240,7 +242,7 @@
             this.button4.TabIndex = 22;
             this.button4.Text = "Add New Order Detail";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.AddNew_Click);
             // 
             // Form1
             // 
@@ -272,7 +274,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "SimpleDataEntryForm";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
