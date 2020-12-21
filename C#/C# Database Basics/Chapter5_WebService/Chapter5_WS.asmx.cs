@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Configuration;
 
 namespace Chapter5_WebService
 {
@@ -21,6 +24,30 @@ namespace Chapter5_WebService
         public string HelloWorld()
         {
             return "Hello World";
+        }
+        [WebMethod]
+        public System.Collections.ObjectModel.Collection<string> listTest(string thisList)
+        {
+            System.Collections.ObjectModel.Collection<string> holder = new System.Collections.ObjectModel.Collection<string>();
+            switch (thisList)
+            {
+                case "First":
+                    holder.Add("one");
+                    holder.Add("two");
+                    holder.Add("three");
+                    return holder;
+
+                case "Second":
+                    holder.Add("four");
+                    holder.Add("five");
+                    holder.Add("six");
+                    holder.Add("seven");
+                    return holder;
+
+                default:
+                    holder.Add("Invalid");
+                    return holder;
+            }
         }
     }
 }
