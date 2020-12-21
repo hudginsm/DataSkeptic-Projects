@@ -49,5 +49,18 @@ namespace Chapter5_WebService
                     return holder;
             }
         }
+        [WebMethod]
+        public DataTable getProducts(string Category)
+        {
+            SqlConnection sqlcn = new SqlConnection(ConfigurationManager.ConnectionStrings["WS_Data"].ConnectionString);
+            DataSet ds = new DataSet();
+            string sqlstr = "SELECT Product FROM tbl_Products WHERE Category = @Category";
+            SqlDataAdapter ws_sql_adapter = new SqlDataAdapter(sqlstr, sqlcn);
+            SqlParameter param = ws_sql_adapter.SelectCommand.Parameters.Add("@Category", SqlDbType.Char, 10);
+            param.Value = Category;
+            ws_sql_adapter.Fill(ds, "Products");
+            DataTable dt = ds.Tables["Products"];
+            return dt;
+        }
     }
 }
