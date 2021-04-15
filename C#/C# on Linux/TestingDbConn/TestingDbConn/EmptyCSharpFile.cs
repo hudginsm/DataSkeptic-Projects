@@ -1,0 +1,13 @@
+﻿using System;
+using System.Data.OleDb;
+
+class DbProg
+{
+    public static void Main(string[] args)
+    {
+        string ConnStr = null;
+        ConnStr = "Provider=PostgreSQL OLE DB Provider;Data Source=localhost;location=analysis;User ID=postgres;password=postgres;timeout=1000;";
+        OleDbConnection DBConn = new OleDbConnection(ConnStr);
+        Console.WriteLine("Connected to DB!");
+    }
+}
