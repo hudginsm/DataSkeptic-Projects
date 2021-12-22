@@ -1,6 +1,6 @@
-windowFonts()
+windowsFonts()
 install.packages("extrafont", dependencies=TRUE)
 library(extrafont)
 font_import(prompt=FALSE)
 loadfonts(device="win")
-length(windowFonts())
+length(windowsFonts())
