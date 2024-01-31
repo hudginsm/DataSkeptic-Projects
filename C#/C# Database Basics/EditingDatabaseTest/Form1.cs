@@ -23,7 +23,7 @@ namespace FirstTestApplication
         public Form1()
         {
             InitializeComponent();
-            connString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\hudgi\OneDrive\Desktop\repos\C#\C# Database Basics\Northwind.accdb; Persist Security Info=False;";
+            connString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\source\repos\GitHub\DataSkeptic-Projects\C#\C# Database Basics\Northwind.accdb; Persist Security Info=False;";
             query = "SELECT * FROM Customers";
             dAdapter = new OleDbDataAdapter(query, connString);
             dTable = new DataTable();
@@ -101,16 +101,6 @@ namespace FirstTestApplication
             {
                 this.comboBox1.Items.Add(this.dataGridView1.Columns[q].HeaderText.ToString());
             }
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
