@@ -23,7 +23,7 @@ namespace FirstTestApplication
         public Form1()
         {
             InitializeComponent();
-            connString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\source\repos\GitHub\DataSkeptic-Projects\C#\C# Database Basics\Northwind.accdb; Persist Security Info=False;";
+            connString = @"Provider=Microsoft.ACE.OLEDB.16.0; Data Source=C:\Users\Admin\source\repos\DataSkeptic-Projects\DataBases\AccessDBs\Northwind.accdb; Persist Security Info=False;";
             query = "SELECT * FROM Customers";
             dAdapter = new OleDbDataAdapter(query, connString);
             dTable = new DataTable();

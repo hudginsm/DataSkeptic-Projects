@@ -24,7 +24,7 @@ namespace FirstTestApplication
         public Form1() 
         {
             InitializeComponent();
-            connString = "Data Source=DataSkeptic;Initial Catalog=AdventureWorks2017;Integrated Security=True;";
+            connString = "Data Source=localhost;Initial Catalog=AdventureWorks2022;Integrated Security=True;";
             query = "SELECT * FROM HumanResources.Department";
             dAdapter = new SqlDataAdapter(query, connString);
             dTable = new DataTable();
