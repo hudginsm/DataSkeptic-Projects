@@ -1,5 +1,3 @@
 {
-    "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "disable",
-    "python.analysis.autoImportCompletions": true
+    "dotnet.defaultSolution": "disable"
 }
