@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+MathForProgramming.egg-info/PKG-INFO
+MathForProgramming.egg-info/SOURCES.txt
+MathForProgramming.egg-info/dependency_links.txt
+MathForProgramming.egg-info/entry_points.txt
+MathForProgramming.egg-info/top_level.txt
+mathforprogramming/__init__.py
+mathforprogramming/__main__.py
+mathforprogramming/main_view.py
+mathforprogramming/main_view.pytoui
